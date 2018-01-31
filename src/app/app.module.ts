@@ -16,6 +16,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
 import {HttpModule} from '@angular/http';
+import {GmailService} from './gmail.service';
 
 const appRoutes: Routes = [{path: 'tictactoe', component: TitactoeComponent},
   {path: 'chess', component: ChessComponent}, {path: 'sudoku', component: SudokuComponent},
@@ -41,7 +42,7 @@ const appRoutes: Routes = [{path: 'tictactoe', component: TitactoeComponent},
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [GmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
