@@ -18,7 +18,10 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {GmailService} from './gmail.service';
 
-const appRoutes: Routes = [{path: 'tictactoe', component: TitactoeComponent},
+import { TTTgameComponent } from './main-view/tttgame/tttgame.component';
+import {Model} from './model';
+
+const appRoutes: Routes = [{path: 'tictactoe', component: TitactoeComponent},{path: 'tictactoe/tttgame', component: TTTgameComponent},
   {path: 'chess', component: ChessComponent}, {path: 'sudoku', component: SudokuComponent},
   {path: 'checkers', component: CheckersComponent}, {path: 'tetris', component: TetrisComponent},
   {path: '', pathMatch: 'full', component: MainViewComponent}]
@@ -35,6 +38,7 @@ const appRoutes: Routes = [{path: 'tictactoe', component: TitactoeComponent},
     SudokuComponent,
     CheckersComponent,
     TetrisComponent,
+    TTTgameComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ const appRoutes: Routes = [{path: 'tictactoe', component: TitactoeComponent},
     FormsModule,
     HttpModule
   ],
-  providers: [GmailService],
+  providers: [GmailService, Model],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
